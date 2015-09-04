@@ -1,8 +1,6 @@
 AlgorithmsAndTraining
 =====================
 
-Training with different books of mathematics, algorithms, data structures and problem solving. 
-This is a part of my training for programming contests. It's a hobby too. 
-I will be adding the solutions to the different exercises proposed by the books and another references used to train,
-and also I will be adding an explanation taken from the book for every different topic and exercise.
-The solutions will be added in C++, Python and Java.
+Training with different books of mathematics, algorithms, data structures and problem solving. Feel free to add any algorithm about any topic. Also, there will be a library in the repo, you can contribute to make it bigger.
+I will be adding the solutions to the different exercises proposed by the books and another references used to train, and sometimes I will explain them too. Please, if you are using one of more references to your algorithm solution, consider to add the reference to it.
+The solutions can be added in any programming language you want.
