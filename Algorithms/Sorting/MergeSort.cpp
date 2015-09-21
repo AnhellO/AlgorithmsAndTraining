@@ -4,7 +4,8 @@ using namespace std;
 
 void merge(int s[], int low, int middle, int high) {
 	int i;
-	queue<int> buffer1, buffer2;
+	queue<int> buffer1, buffer2; //Temporary buffer for the sub-arrays, this way we avoid
+	//the overwriting of the original array while merging
 	//printf("Low: %d, Middle: %d, High: %d\n", low, middle, high);
 	for(i = low ; i <= middle ; i++) {
 		buffer1.push(s[i]);
@@ -20,12 +21,12 @@ void merge(int s[], int low, int middle, int high) {
 		if(buffer1.front() <= buffer2.front()) {
 			s[i++] = buffer1.front();
 			buffer1.pop();
-		} else {
+		} else { //Inversion in MergeSort
 			s[i++] = buffer2.front();
 			buffer2.pop();
 		}
 	}
-	
+	//Dequeue the remaining elements in each buffer and add them to the original array
 	while(!buffer1.empty()) {
 		s[i++] = buffer1.front();
 		buffer1.pop();
@@ -36,14 +37,15 @@ void merge(int s[], int low, int middle, int high) {
 	}
 	//printf("\n");
 }
-
+//Divide and conquer example in Merge Sort
 void mergesort(int s[], int low, int high) {
 	int i, middle;
-	
+	//Keep partitioning the array and sub-arrays, until you get sub-arrays of size one (Recursively)
 	if(low < high) {
 		middle = (low + high) / 2;
-		mergesort(s, low, middle);
-		mergesort(s, middle + 1, high);
+		mergesort(s, low, middle); 
+		//After all the partitioning, start merging each sub-array
+		//mergesort(s, middle + 1, high);
 		merge(s, low, middle, high);
 	}
 }
