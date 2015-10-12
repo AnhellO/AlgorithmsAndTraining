@@ -1,7 +1,11 @@
 #include <cstdio>
 #include <queue>
 using namespace std;
-
+/*
+* @author: Angel Santiago Jaime Zavala
+* @version: 1.0.1
+* Taken from "The Algorithm Design Manual by Steven S. Skiena, pag: 120 - 123"
+*/
 void merge(int s[], int low, int middle, int high) {
 	int i;
 	queue<int> buffer1, buffer2; //Temporary buffer for the sub-arrays, this way we avoid
