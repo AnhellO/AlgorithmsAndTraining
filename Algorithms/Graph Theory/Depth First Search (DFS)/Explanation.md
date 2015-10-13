@@ -25,23 +25,27 @@ A depth-first search starting at A, assuming that the left edges in the shown gr
 
 A recursive implementation of DFS:
 
-``` procedure DFS(G,v):
+```pseudocode
+procedure DFS(G,v):
       label v as discovered
       for all edges w in G.adjacentEdges(v) do
-         if vertex w is not labeled as discovered then
-              recursively call DFS(G,w)```
+            if vertex w is not labeled as discovered then
+                  recursively call DFS(G,w)
+```
 
 A non-recursive implementation of DFS:
 
-``` procedure DFS-iterative(G,v):
+```pseudocode
+procedure DFS-iterative(G,v):
       let S be a stack
       S.push(v)
       while S is not empty
             v = S.pop()
             if v is not labeled as discovered:
-                label v as discovered
-                for all edges from v to w in G.adjacentEdges(v) do
-                    S.push(w)```
+                  label v as discovered
+                  for all edges from v to w in G.adjacentEdges(v) do
+                  S.push(w)
+```
 
 These two variations of DFS visit the neighbors of each vertex in the opposite order from each other: the first neighbor of v visited by the recursive variation is the first one in the list of adjacent edges, while in the iterative variation the first visited neighbor is the last one in the list of adjacent edges.
 The non-recursive implementation is similar to breadth-first search but differs from it in two ways: it uses a stack instead of a queue, and it delays checking whether a vertex has been discovered until the vertex is popped from the stack rather than making this check before pushing the vertex.
