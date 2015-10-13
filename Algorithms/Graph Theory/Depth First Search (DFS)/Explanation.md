@@ -26,7 +26,7 @@ A depth-first search starting at A, assuming that the left edges in the shown gr
 A recursive implementation of DFS:
 
 ```pseudocode
-**procedure DFS(G,v)**:
+procedure DFS(G,v):
       label v as discovered
       for all edges w in G.adjacentEdges(v) do
             if vertex w is not labeled as discovered then
@@ -36,7 +36,7 @@ A recursive implementation of DFS:
 A non-recursive implementation of DFS:
 
 ```pseudocode
-**procedure DFS-iterative(G,v)**:
+procedure DFS-iterative(G,v):
       let S be a stack
       S.push(v)
       while S is not empty
