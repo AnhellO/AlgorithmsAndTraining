@@ -13,7 +13,7 @@ In these applications it also uses space O(|V|) in the worst case to store the s
 
 For the following graph:
 
-![Sample Graph](https://commons.wikimedia.org/wiki/File:Graph.traversal.example.svg#/media/File:Graph.traversal.example.svg "DFS")
+![Sample Graph](https://github.com/AnhellO/AlgorithmsAndTraining/blob/master/Algorithms/Graph%20Theory/Depth%20First%20Search%20%28DFS%29/DFS%20Traversal.png "DFS")
 
 A depth-first search starting at A, assuming that the left edges in the shown graph are chosen before right edges, and assuming the search remembers previously visited nodes and will not repeat them (since this is a small graph), will visit the nodes in the following order: A, B, D, F, E, C, G.
 
@@ -26,7 +26,7 @@ A depth-first search starting at A, assuming that the left edges in the shown gr
 A recursive implementation of DFS:
 
 ```pseudocode
-procedure DFS(G,v):
+**procedure DFS(G,v)**:
       label v as discovered
       for all edges w in G.adjacentEdges(v) do
             if vertex w is not labeled as discovered then
@@ -36,7 +36,7 @@ procedure DFS(G,v):
 A non-recursive implementation of DFS:
 
 ```pseudocode
-procedure DFS-iterative(G,v):
+**procedure DFS-iterative(G,v)**:
       let S be a stack
       S.push(v)
       while S is not empty
